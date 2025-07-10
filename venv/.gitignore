@@ -1,7 +1,6 @@
 .env
 .env.*
 .idea/
-*.sqlite3
 *.db
 *.log
 *.pyc
