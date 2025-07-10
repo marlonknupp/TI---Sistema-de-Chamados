@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="container mt-4">
+        <!-- Tabela de setores -->
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header bg-info">
+                    <h3 class="card-title">Lista de usuarios</h3>
+                </div>
+                <div class="card-body table-responsive p-0" style="max-height: 400px;">
+                    <table class="table table-hover text-nowrap">
+                        <thead>
+                            <tr>
+                                <th>Nome</th>
+                                <th>Email</th>     
+                                <th>Senha</th>
+                                <th>Tipo_usuario</th>                    
+                                <th>Setor</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for usuario in usuarios %}
+                            <tr>
+                                <td>{{ usuario.nome }}</td>
+                                <td>{{ usuario.email }}</td>   
+                                <td>{{ usuario.senha }}</td> 
+                                <td>{{ usuario.tipo_usuario }}</td> 
+                                <td>{{ usuario.setor }}</td>                    
+                            </tr>
+                            {% empty %}
+                            <tr>
+                                <td colspan="5">Nenhum usuario cadastrado.</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
