@@ -3,10 +3,10 @@ from .models import Chamado
 
 class ChamadoForm(forms.ModelForm):
     class Meta:
-        models = Chamado
-        fields = ['descricao','data_abertura','data_fechamento','solicitante'
-                'tecnico_responsavel','equipamento','setor']
+        model = Chamado
+        fields = ['descricao','data_fechamento','solicitante',
+                'tecnico_responsavel','equipamento','setor','status']
         widgets = {
-            'data': forms.DateInput(attrs={'type': 'date'}),  # aparece o caléndario 
+            'data_fechamento': forms.DateInput(attrs={'type': 'date'}),  # aparece o caléndario 
         }
         

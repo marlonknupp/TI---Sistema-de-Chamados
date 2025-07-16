@@ -4,7 +4,13 @@
 
 {% block content %}
 <div class="container mt-4">
-        <!-- Tabela de setoress -->
+
+        <div class="d-flex justify-content-end mb-3">
+            <a href="{% url 'criar_setor' %}" class="btn btn-primary">
+                + Criar Setor
+            </a>
+        </div>
+
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header bg-info">

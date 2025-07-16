@@ -4,47 +4,52 @@
 
 {% block content %}
 <div class="container mt-4">
-        <!-- Tabela de Chamados -->
-        <div class="col-md-15">
-            <div class="card">
-                <div class="card-header bg-info">
-                    <h3 class="card-title">Lista de Chamados</h3>
-                </div>
-                <div class="card-body table-responsive p-0" style="max-height: 400px;">
-                    <table class="table table-hover text-nowrap">
-                        <thead>
-                            <tr>
-                                <th>Descrição</th>
-                                <th>data_abertura</th>
-                                <th>data_fechamento</th>
-                                <th>Solicitante</th>
-                                <th>tecnico_responsavel</th>
-                                <th>Equipamento</th>
-                                <th>Setor</th>
-                                
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {% for chamado in chamados %}
-                            <tr>
-                                <td>{{ chamado.descricao }}</td>
-                                <td>{{ chamado.data_abertura }}</td>
-                                <td>{{ chamado.data_fechamento }}</td>
-                                <td>{{ chamado.solicitante }}</td>
-                                <td>{{ chamado.tecnico_responsavel }}</td>
-                                <td>{{ chamado.equipamento }}</td>
-                                <td>{{ chamado.setor }}</td>
-                            </tr>
-                            {% empty %}
-                            <tr>
-                                <td colspan="5">Nenhum Chamado cadastrado.</td>
-                            </tr>
-                            {% endfor %}
-                        </tbody>
-                    </table>
-                </div>
+
+    <div class="d-flex justify-content-end mb-3">
+        <a href="{% url 'criar_chamado' %}" class="btn btn-primary">
+            + Criar Chamado
+        </a>
+    </div>
+
+    <!-- Tabela de Chamados -->
+    <div class="col-md-15">
+        <div class="card">
+            <div class="card-header bg-info">
+                <h3 class="card-title">Lista de Chamados</h3>
+            </div>
+            <div class="card-body table-responsive p-0" style="max-height: 400px;">
+                <table class="table table-hover text-nowrap">
+                    <thead>
+                        <tr>
+                            <th>Descrição</th>
+                            <th>data_abertura</th>
+                            <th>data_fechamento</th>
+                            <th>Solicitante</th>
+                            <th>tecnico_responsavel</th>
+                            <th>Equipamento</th>
+                            <th>Setor</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for chamado in chamados %}
+                        <tr>
+                            <td>{{ chamado.descricao }}</td>
+                            <td>{{ chamado.data_abertura }}</td>
+                            <td>{{ chamado.data_fechamento }}</td>
+                            <td>{{ chamado.solicitante }}</td>
+                            <td>{{ chamado.tecnico_responsavel }}</td>
+                            <td>{{ chamado.equipamento }}</td>
+                            <td>{{ chamado.setor }}</td>
+                        </tr>
+                        {% empty %}
+                        <tr>
+                            <td colspan="7">Nenhum Chamado cadastrado.</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>
-
+</div>
 {% endblock %}

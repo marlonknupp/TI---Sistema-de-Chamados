@@ -5,6 +5,12 @@
 {% block content %}
 <div class="container mt-4">
         <!-- Tabela de Equipamentos -->
+        <div class="d-flex justify-content-end mb-3">
+        <a href="{% url 'criar_comentario' %}" class="btn btn-primary">
+            + Criar Comentário
+        </a>
+        </div>
+
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header bg-info">
@@ -14,17 +20,15 @@
                     <table class="table table-hover text-nowrap">
                         <thead>
                             <tr>
-                                <th>chamado</th>
-                                <th>Autor</th>
-                                <th>Mensgem</th>
+                                <th>Usuario</th>
+                                <th>Mensagem</th>
                                 <th>Data</th>
                             </tr>
                         </thead>
                         <tbody>
                             {% for comentario in comentarios %}
                             <tr>
-                                <td>{{ comentario.chamado }}</td>
-                                <td>{{ comentario.autor }}</td>
+                                <td>{{ comentario.usuario }}</td>
                                 <td>{{ comentario.mensagem }}</td>
                                 <td>{{ comentario.data }}</td>
                                 

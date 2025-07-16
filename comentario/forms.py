@@ -4,7 +4,7 @@ from .models import Comentario
 class ComentarioForm(forms.ModelForm):
     class Meta:
         model = Comentario
-        fields = ['chamado','autor','mensagem','data']
+        fields = ['usuario','mensagem']
         widgets = {
             'data': forms.DateInput(attrs={'type': 'date'}),  # aparece o caléndario 
         }
