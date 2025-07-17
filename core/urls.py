@@ -5,6 +5,7 @@ from .import views
 urlpatterns = [
 
     path('admin/', admin.site.urls),
+    path('dashboard/', views.dashboard, name='home'),
     path('', views.dashboard, name='home'),
     path('chamado/', include('chamado.urls')),
     path('comentario/', include('comentario.urls')),

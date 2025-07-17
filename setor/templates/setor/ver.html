@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <p><strong>Nome:</strong> {{ setor.nome }}</p>
+  <p><strong>Andar:</strong> {{ setor.andar }}</p>
+  
+  <a href="{% url 'lista_setor' %}" class="btn btn-secondary mt-3">Voltar à lista</a>
+{% endblock %}

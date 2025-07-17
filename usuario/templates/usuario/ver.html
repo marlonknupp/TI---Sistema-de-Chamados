@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <p><strong>Nome:</strong> {{ usuario.nome }}</p>
+  <p><strong>email:</strong> {{ usuario.email }}</p>
+  <p><strong>senha:</strong> {{ usuario.senha }}</p>
+  <p><strong>tipo_usuario:</strong> {{ usuario.tipo_usuario }}</p>
+  <p><strong>setor:</strong> {{ usuario.setor }}</p>
+  
+  <a href="{% url 'lista_usuario' %}" class="btn btn-secondary mt-3">Voltar à lista</a>
+{% endblock %}

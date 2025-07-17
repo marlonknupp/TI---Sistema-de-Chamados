@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <p><strong>Usuario:</strong> {{ comentario.usuario }}</p>
+  <p><strong>Mensagem:</strong> {{ comentario.mensagem }}</p>
+  <p><strong>Data:</strong> {{ comentario.data }}</p>
+  
+  <a href="{% url 'lista_comentario' %}" class="btn btn-secondary mt-3">Voltar à lista</a>
+{% endblock %}

@@ -8,7 +8,7 @@
         <div class="col-lg-3 col-6">
             <div class="small-box bg-info">
                 <div class="inner">
-                    <h3>0</h3>
+                    <h3>{{ total_em_atendimento }}</h3>
                     <p>Novos Chamados</p>
                 </div>
                 <div class="icon">
@@ -21,7 +21,7 @@
         <div class="col-lg-3 col-6">
             <div class="small-box bg-success">
                 <div class="inner">
-                    <h3>0</h3>
+                    <h3>{{ total_resolvidos }}</h3>
                     <p>Resolvidos</p>
                 </div>
                 <div class="icon">
@@ -34,7 +34,7 @@
         <div class="col-lg-3 col-6">
             <div class="small-box bg-warning">
                 <div class="inner">
-                    <h3>0</h3>
+                    <h3>{{ total_abertos }}</h3>
                     <p>Chamados Abertos</p>
                 </div>
                 <div class="icon">
@@ -47,7 +47,7 @@
         <div class="col-lg-3 col-6">
             <div class="small-box bg-danger">
                 <div class="inner">
-                    <h3>0</h3>
+                    <h3>{{ total_criticos }}</h3>
                     <p>Alertas Críticos</p>
                 </div>
                 <div class="icon">
@@ -57,7 +57,5 @@
             </div>
         </div>
     </div>
-
-    <!-- Você pode adicionar os gráficos aqui depois -->
 </div>
 {% endblock %}

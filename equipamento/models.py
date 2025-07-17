@@ -3,7 +3,7 @@ from setor.models import Setor
 
 class Equipamento (models.Model):
     nome = models.CharField(max_length=200)
-    numero_patrimonio = models.CharField(max_length=20, unique=True)
+    patrimonio = models.CharField(max_length=20, unique=True)
     setor = models.ForeignKey(Setor, on_delete=models.CASCADE, null=True, blank=True)
 
     TIPO_CHOICE = [

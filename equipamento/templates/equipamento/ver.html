@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <p><strong>Nome:</strong> {{ equipamento.nome }}</p>
+  <p><strong>Patrimonio:</strong> {{ equipamento.patrimonio }}</p>
+  <p><strong>Tipo:</strong> {{ equipamento.tipo }}</p>
+  <p><strong>status:</strong> {{ equipamento.status }}</p>
+  <p><strong>setor:</strong> {{ equipamento.setor }}</p>
+  
+  <a href="{% url 'lista_equipamento' %}" class="btn btn-secondary mt-3">Voltar à lista</a>
+{% endblock %}

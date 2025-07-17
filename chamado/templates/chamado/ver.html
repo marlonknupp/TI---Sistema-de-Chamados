@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <p><strong>Descrição:</strong> {{ chamado.descricao }}</p>
+  <p><strong>Data_abertura:</strong> {{ chamado.data_abertura }}</p>
+  <p><strong>Data_fechamento:</strong> {{ chamado.data_fechamento }}</p>
+  <p><strong>Solicitante:</strong> {{ chamado.solicitante }}</p>
+  <p><strong>Tecnico_responsavel:</strong> {{ chamado.tecnico_responsavel }}</p>
+  <p><strong>Equipamento:</strong> {{ chamado.equipamento }}</p>
+  <p><strong>Setor:</strong> {{ chamado.setor }}</p>
+  
+  <a href="{% url 'lista_chamado' %}" class="btn btn-secondary mt-3">Voltar à lista</a>
+{% endblock %}

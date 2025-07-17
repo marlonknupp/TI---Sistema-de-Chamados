@@ -12,7 +12,7 @@
     </div>
 
     <!-- Tabela de Chamados -->
-    <div class="col-md-15">
+    <div class="col-md-12">
         <div class="card">
             <div class="card-header bg-info">
                 <h3 class="card-title">Lista de Chamados</h3>
@@ -40,10 +40,23 @@
                             <td>{{ chamado.tecnico_responsavel }}</td>
                             <td>{{ chamado.equipamento }}</td>
                             <td>{{ chamado.setor }}</td>
+                            <td>
+                                <div class="d-flex justify-content-end gap-2">
+                                    <a href="{% url 'ver_chamado' chamado.id %}" class="btn btn-info btn-sm">
+                                    <i class="fas fa-eye"></i>
+                                    </a>
+                                    <a href="{% url 'editar_chamado' chamado.id %}" class="btn btn-warning btn-sm">
+                                    <i class="fas fa-pen"></i>
+                                    </a>
+                                    <a href="{% url 'deletar_chamado' chamado.id %}" class="btn btn-danger btn-sm" onclick="return confirm('Tem certeza que deseja excluir?')">
+                                    <i class="fas fa-trash"></i>
+                                    </a>
+                                </div>
+                            </td>
                         </tr>
                         {% empty %}
                         <tr>
-                            <td colspan="7">Nenhum Chamado cadastrado.</td>
+                            <td colspan="8">Nenhum Chamado cadastrado.</td>
                         </tr>
                         {% endfor %}
                     </tbody>
