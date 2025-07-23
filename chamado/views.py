@@ -3,7 +3,10 @@ from .models import Chamado
 from .forms import ChamadoForm
 from historico.models import Historico
 from django.shortcuts import get_object_or_404
+from django.contrib.auth.decorators import login_required
 
+
+@login_required
 def lista_chamado(request):
     chamados = Chamado.objects.all()
     return render (request, 'chamado/lista.html', {'chamados': chamados})

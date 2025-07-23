@@ -1,7 +1,9 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Usuario
 from .forms import UsuarioForm
+from django.contrib.auth.decorators import login_required
 
+@login_required
 def lista_usuario(request):
     usuarios = Usuario.objects.all()
     return render(request, 'usuario/lista.html', {'usuarios': usuarios})

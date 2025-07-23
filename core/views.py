@@ -1,12 +1,11 @@
 from django.shortcuts import render
+from django.contrib.auth.decorators import login_required
 from chamado.models import Chamado
 from setor.models import Setor
 from equipamento.models import Equipamento
 from usuario.models import Usuario
 
-def home(request):
-    return render(request, 'base.html')
-
+@login_required
 def dashboard(request):
     # Contagem de chamados
     total_abertos = Chamado.objects.filter(status='aberto').count()

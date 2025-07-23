@@ -1,7 +1,9 @@
 from django.shortcuts import render, redirect, get_object_or_404
+from django.contrib.auth.decorators import login_required
 from .models import Comentario
 from .forms import ComentarioForm
 
+@login_required
 def lista_comentario(request):
     comentarios = Comentario.objects.all()
     return render(request, 'comentario/lista.html', {'comentarios': comentarios})
