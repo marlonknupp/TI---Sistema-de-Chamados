@@ -6,8 +6,8 @@ from setor.models import Setor
 
 class Chamado (models.Model):
     descricao = models.TextField()
-    data_abertura = models.DateTimeField(auto_now_add=True)
-    data_fechamento = models.DateTimeField (null=True, blank=True)
+    data_abertura = models.DateField(null=True, blank=True)
+    data_fechamento = models.DateField (null=True, blank=True)
     solicitante = models.ForeignKey(Usuario, on_delete=models.CASCADE, related_name='chamados_solicitados', null=True, blank=True)
     tecnico_responsavel = models.ForeignKey(Usuario, on_delete=models.CASCADE, related_name='chamados_recebidos', null=True, blank=True)
     equipamento = models.ForeignKey(Equipamento, on_delete=models.CASCADE, null=True, blank=True)
