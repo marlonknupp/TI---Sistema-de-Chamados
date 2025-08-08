@@ -20,13 +20,13 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'core',
+    'chamado',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'chamado',
     'comentario',
     'equipamento',
     'historico',
@@ -34,6 +34,8 @@ INSTALLED_APPS = [
     'usuario',
     'crispy_forms',
     'crispy_bootstrap5',
+    
+
     
 ]
 
