@@ -21,7 +21,7 @@ def dashboard(request):
     total_usuarios = Usuario.objects.count()
 
     # ================================
-    # 📊 Dados para o gráfico de linha (últimos 7 dias)
+    # Dados para o gráfico de linha (últimos 7 dias)
     hoje = timezone.now().date()
     labels_dias = []
     valores_dias = []
@@ -32,7 +32,7 @@ def dashboard(request):
         qtd_chamados = Chamado.objects.filter(data_abertura=dia).count()
         valores_dias.append(qtd_chamados)
 
-    # 📊 Dados para o gráfico de pizza
+    # Dados para o gráfico de pizza
     pizza_labels = ['Abertos', 'Em Atendimento', 'Resolvidos', 'Alertas Críticos']
     pizza_valores = [total_abertos, total_em_atendimento, total_resolvidos, total_criticos]
     # ================================

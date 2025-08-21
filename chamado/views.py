@@ -47,3 +47,6 @@ def deletar_chamado(request, pk):
         return redirect('lista_chamado')
     return render(request, 'chamado/deletar.html', {'chamado': chamado})
 
+def status_chamado(request, status):
+     chamados = Chamado.objects.filter(status=status)
+     return render(request, 'chamado/lista.html', {'chamados': chamados, 'status': status})     # retorna somente os chamados em status especificos

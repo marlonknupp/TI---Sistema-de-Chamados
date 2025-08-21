@@ -15,9 +15,10 @@ class Chamado (models.Model):
 
     STATUS_CHOICE = [
         ('aberto','Aberto'),
-        ('em_atendimento','Em Atendimento'),
+        ('em_atendimento', 'Em Atendimento'),
         ('resolvido','Resolvido'),
         ('cancelado','Cancelado'),
+        ('critica','Critica'),
 
     ]
     PRIORIDADE_CHOICE = [
