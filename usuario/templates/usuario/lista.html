@@ -21,7 +21,6 @@
                             <tr>
                                 <th>Nome</th>
                                 <th>Email</th>     
-                                <th>Senha</th>
                                 <th>Tipo_usuario</th>                    
                                 <th>Setor</th>
                             </tr>
@@ -30,8 +29,7 @@
                             {% for usuario in usuarios %}
                             <tr>
                                 <td>{{ usuario.nome }}</td>
-                                <td>{{ usuario.email }}</td>   
-                                <td>{{ usuario.senha }}</td> 
+                                <td>{{ usuario.email }}</td>    
                                 <td>{{ usuario.tipo_usuario }}</td> 
                                 <td>{{ usuario.setor }}</td> 
                                 <td>

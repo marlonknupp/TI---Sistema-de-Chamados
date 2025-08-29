@@ -1,7 +1,9 @@
 from django.shortcuts import render, redirect, get_object_or_404
+from django.contrib.auth.decorators import login_required
 from .models import Setor
 from .forms import SetorForm
 
+@login_required
 def lista_setor(request):
     setors = Setor.objects.all()
     return render(request, 'setor/lista.html', {'setors': setors})

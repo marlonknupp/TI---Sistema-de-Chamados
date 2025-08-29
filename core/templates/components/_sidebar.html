@@ -10,13 +10,15 @@
     <!-- Painel do Usuário -->
     <div class="sidebar">
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-            <div class="image">
-                <img src="{% static 'adminlte/dist/img/user2--160x160.jpg' %}" class="img-circle elevation-2" alt="User Image">
-            </div>
             <div class="info">
-                <a href="{% url 'home' %}" class="d-block">Marlon.k</a>
+                {% if user.is_authenticated %}
+                    <a href="{% url 'home' %}" class="d-block"> Olá, {{ user.get_full_name|default:user.username }}. Seja bem-vindo!</a>
+                {% else %}
+                    <a href="{% url 'home' %}" class="d-block">Faça login para continuar</a>
+                {% endif %}
             </div>
         </div>
+
 
         <!-- Menu lateral -->
         <nav class="mt-2">

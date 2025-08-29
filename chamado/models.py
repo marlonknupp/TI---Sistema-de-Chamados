@@ -22,9 +22,9 @@ class Chamado (models.Model):
     ]
     PRIORIDADE_CHOICE = [
         ('baixa','Baixa'),
-        ('media','Média'),
+        ('media','Media'),
         ('alta','Alta'),
-        ('critica','Crítica'),
+        ('critica','Critica'),
     ]
 
     status =  models.CharField(max_length=20, choices=STATUS_CHOICE, default='aberto')
