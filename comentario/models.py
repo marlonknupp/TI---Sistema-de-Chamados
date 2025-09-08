@@ -7,4 +7,4 @@ class Comentario(models.Model):
     data = models.DateField(auto_now_add=True)
 
     def __str__(self):
-        return f'{self.autor}'
+        return f'{self.usuario}'
