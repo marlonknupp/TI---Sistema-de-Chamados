@@ -35,4 +35,4 @@ class Chamado (models.Model):
         return f' {self.solicitante}'
         
     class Meta:
-            ordering = ['-data_abertura']              # Lista os chamados do mais novo para o mais antigo
+            ordering = ['-data_abertura']      # Lista os chamados do mais novo para o mais antigo
