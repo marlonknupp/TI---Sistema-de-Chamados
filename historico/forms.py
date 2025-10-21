@@ -5,7 +5,7 @@ class HistoricoForm(forms.ModelForm):
 
     class Meta: 
         model = Historico
-        fields = ['chamado','status_anterior','status_novo','alterado_por']
+        fields = ['chamado','descricao','alterado_por','data_alteracao']
         widgets = {
             'data': forms.DateInput(attrs={'type': 'date'}),  # aparece o caléndario 
         }

@@ -23,8 +23,7 @@ class Equipamento (models.Model):
 
     ]
 
-    tipo =  models.CharField(max_length=50, choices=TIPO_CHOICE, default='notebook')
     status = models.CharField(max_length=40, choices=STATUS_CHOICE, default='ativo')
 
     def __str__(self):
-        return f'{self.nome} ({self.tipo}, {self.status})'
+        return f'{self.nome}'

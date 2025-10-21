@@ -15,18 +15,16 @@
                         <thead>
                             <tr>
                                 <th>Chamado</th>
-                                <th>status_anterior</th>
-                                <th>status_novo</th>
-                                <th>Alterado_por</th>
-                                <th>Data_alteracao</th>
+                                <th>Descrição</th>
+                                <th>Alterado por</th>
+                                <th>Data alteracao</th>
                             </tr>
                         </thead>
                         <tbody>
                             {% for historico in historicos %}
                             <tr>
                                 <td>{{ historico.chamado }}</td>
-                                <td>{{ historico.status_anterior }}</td>
-                                <td>{{ historico.status_novo }}</td>
+                                <td>{{ historico.descricao }}</td>
                                 <td>{{ historico.alterado_por }}</td>
                                 <td>{{ historico.data_alteracao }}</td>
                             </tr>

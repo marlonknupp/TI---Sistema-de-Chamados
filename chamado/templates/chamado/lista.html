@@ -22,12 +22,13 @@
                     <thead>
                         <tr>
                             <th>Descrição</th>
-                            <th>data_abertura</th>
-                            <th>data_fechamento</th>
+                            <th>Data Abertura</th>
+                            <th>Data Fechamento</th>
                             <th>Solicitante</th>
-                            <th>tecnico_responsavel</th>
+                            <th>Tecnico Responsavel</th>
                             <th>Equipamento</th>
                             <th>Setor</th>
+                            <th>Status</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -40,6 +41,7 @@
                             <td>{{ chamado.tecnico_responsavel }}</td>
                             <td>{{ chamado.equipamento }}</td>
                             <td>{{ chamado.setor }}</td>
+                            <td>{{ chamado.get_status_display }}</td>
                             <td>
                                 <div class="d-flex justify-content-end gap-2">
                                     <a href="{% url 'ver_chamado' chamado.id %}" class="btn btn-info btn-sm">

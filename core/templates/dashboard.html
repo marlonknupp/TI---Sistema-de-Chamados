@@ -9,12 +9,10 @@
             <div class="small-box bg-info">
                 <div class="inner">
                     <h3>{{ total_em_atendimento }}</h3>
-                    <p>Novos Chamados</p>
+                    <p>Em Atendimento</p>
                 </div>
-                <div class="icon">
-                    <i class="fas fa-ticket-alt"></i>
-                </div>
-                <a href="#" class="small-box-footer">Mais informações <i class="fas fa-arrow-circle-right"></i></a>
+                <div class="icon"><i class="fas fa-ticket-alt"></i></div>
+                <a href="{% url 'status_chamado'  'em_atendimento' %}" class="small-box-footer" >Chamados em atendimento <i class="fas fa-arrow-circle-right"></i></a>
             </div>
         </div>
 
@@ -24,10 +22,8 @@
                     <h3>{{ total_resolvidos }}</h3>
                     <p>Resolvidos</p>
                 </div>
-                <div class="icon">
-                    <i class="fas fa-chart-line"></i>
-                </div>
-                <a href="#" class="small-box-footer">Mais informações <i class="fas fa-arrow-circle-right"></i></a>
+                <div class="icon"><i class="fas fa-chart-line"></i></div>
+                <a href="{% url 'status_chamado'  'resolvido' %}" class="small-box-footer">Chamados resolvidos <i class="fas fa-arrow-circle-right"></i></a>
             </div>
         </div>
 
@@ -35,12 +31,10 @@
             <div class="small-box bg-warning">
                 <div class="inner">
                     <h3>{{ total_abertos }}</h3>
-                    <p>Chamados Abertos</p>
+                    <p>Em Aberto</p>
                 </div>
-                <div class="icon">
-                    <i class="fas fa-tools"></i>
-                </div>
-                <a href="#" class="small-box-footer">Mais informações <i class="fas fa-arrow-circle-right"></i></a>
+                <div class="icon"><i class="fas fa-tools"></i></div>
+                <a href="{% url 'status_chamado'  'aberto' %}" class="small-box-footer">Chamados em aberto <i class="fas fa-arrow-circle-right"></i></a>
             </div>
         </div>
 
@@ -50,12 +44,64 @@
                     <h3>{{ total_criticos }}</h3>
                     <p>Alertas Críticos</p>
                 </div>
-                <div class="icon">
-                    <i class="fas fa-exclamation-triangle"></i>
+                <div class="icon"><i class="fas fa-exclamation-triangle"></i></div>
+                <a href="{% url 'status_chamado'  'critica' %}" class="small-box-footer">Chamados em alerta crítico <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Gráficos -->
+    <div class="row mt-4">
+        <div class="col-lg-8">
+            <div class="card">
+                <div class="card-header bg-primary text-white">Chamados por Dia</div>
+                <div class="card-body">
+                    <canvas id="graficoLinha"></canvas>
                 </div>
-                <a href="#" class="small-box-footer">Mais informações <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="card">
+                <div class="card-header bg-secondary text-white">Status dos Chamados</div>
+                <div class="card-body">
+                    <canvas id="graficoPizza"></canvas>
+                </div>
             </div>
         </div>
     </div>
 </div>
+
+<!-- Script Chart.js -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    // Gráfico de Linha
+    const ctxLinha = document.getElementById('graficoLinha').getContext('2d');
+    new Chart(ctxLinha, {
+        type: 'line',
+        data: {
+            labels: {{ labels_dias|safe }},
+            datasets: [{
+                label: 'Chamados',
+                data: {{ valores_dias|safe }},
+                borderColor: 'blue',
+                backgroundColor: 'rgba(0, 123, 255, 0.3)',
+                fill: true,
+                tension: 0.3
+            }]
+        }
+    });
+
+    // Gráfico de Pizza
+    const ctxPizza = document.getElementById('graficoPizza').getContext('2d');
+    new Chart(ctxPizza, {
+        type: 'pie',
+        data: {
+            labels: {{ pizza_labels|safe }},
+            datasets: [{
+                data: {{ pizza_valores|safe }},
+                backgroundColor: ['#ffc107', '#17a2b8', '#28a745', '#dc3545']
+            }]
+        }
+    });
+</script>
 {% endblock %}
